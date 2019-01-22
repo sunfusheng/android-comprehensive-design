@@ -1,0 +1,37 @@
+{
+  "root":"docs",
+  "title": "《Android全面设计》",
+  "author": "孙福生",
+  "description": "让我们开启全面系统学习Android开发之旅吧",
+  "language" : "zh-hans",
+  "links":{
+    "sharing": {
+      "all": null,
+      "facebook": null,
+      "google": null,
+      "twitter": null,
+      "weibo": true
+    }
+  },
+  "plugins": [
+    "-search",
+    "search-pro",
+    "ace",
+    "splitter",
+    "toggle-chapters",
+    "prism",
+    "donate",
+    "-highlight"
+  ],
+  "pluginsConfig": {
+    "search-pro": {
+      "cutWordLib": "nodejieba",
+      "defineWord" : ["Gitbook Use"]
+    },
+    "donate": {
+      "wechat": "",
+      "button": "赏",
+      "wechatText": "微信打赏"
+    }
+  }
+}
