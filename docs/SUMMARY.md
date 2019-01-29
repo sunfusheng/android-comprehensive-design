@@ -13,7 +13,16 @@
     * [内存优化]()
     * [MVP]()
     * [MVVM]()
-    
+
+* [Kotlin应用Dagger2](/dagger2/README.md)
+    * [第一节 Dagger2是什么？]()
+    * [第二节 @Inject和@Component]()
+    * [第三节 @Module和@Provides]()
+    * [第四节 @Qualifier和@Named]()
+    * [第五节 @Scope和@Singleton]()
+    * [第六节 @Lazy和@Provider]()
+    * [第七节 @Subcomponent]()
+
 * [Java虚拟机]()   
     
 * [Dalvik和ART]() 
@@ -24,6 +33,6 @@
     * [Small]()
     * [VirtualApk]() 
      
-* [Kotlin与Android]()
+* [Android使用Kotlin开发]()
 
 
