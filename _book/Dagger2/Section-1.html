@@ -1,0 +1,413 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第一节 Dagger2是什么？ · 《Android全面设计》</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="孙福生">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    目录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Kotlin使用Dagger2详解
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1" data-path="Section-1.html">
+            
+                <a href="Section-1.html">
+            
+                    
+                    第一节 Dagger2是什么？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" >
+            
+                <span>
+            
+                    
+                    第二节 @Inject和@Component
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" >
+            
+                <span>
+            
+                    
+                    第三节 @Module和@Provides
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" >
+            
+                <span>
+            
+                    
+                    第四节 @Qualifier和@Named
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" >
+            
+                <span>
+            
+                    
+                    第五节 @Scope和@Singleton
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" >
+            
+                <span>
+            
+                    
+                    第六节 @Lazy和@Provider
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" >
+            
+                <span>
+            
+                    
+                    第七节 @Subcomponent
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >第一节 Dagger2是什么？</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="dagger2&#x662F;&#x4EC0;&#x4E48;&#xFF1F;">Dagger2&#x662F;&#x4EC0;&#x4E48;&#xFF1F;</h2>
+<p><a href="https://github.com/google/dagger" target="_blank">Dagger2</a>&#x662F;<a href="https://github.com/google" target="_blank">Google</a>&#x4ECE;<a href="https://github.com/square" target="_blank">Square</a>&#x7684;<a href="https://github.com/square/dagger" target="_blank">Dagger1</a>Fork&#x8FC7;&#x6765;&#x7684;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E;<a href="https://jcp.org/en/jsr/detail?id=330" target="_blank">JSR 330</a>&#x6807;&#x51C6;&#x7684;&#x4E3A;Android and Java&#x8BBE;&#x8BA1;&#x7684;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x6846;&#x67B6;&#xFF0C;&#x5B83;&#x7684;&#x4E3B;&#x8981;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x5728;&#x7F16;&#x8BD1;&#x671F;&#x95F4;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x4EE3;&#x7801;&#xFF0C;&#x5B8C;&#x6210;&#x5BF9;&#x4F9D;&#x8D56;&#x5BF9;&#x8C61;&#x7684;&#x521B;&#x5EFA;&#xFF0C;&#x8FBE;&#x5230;&#x7C7B;&#x4E0E;&#x7C7B;&#x4E4B;&#x95F4;&#x89E3;&#x8026;&#x7684;&#x76EE;&#x7684;&#x3002;</p>
+<p><a href="https://github.com/google/dagger" target="_blank">Dagger2</a>&#x540C;&#x6837;&#x548C;<a href="https://github.com/JakeWharton/butterknife" target="_blank">Butter Knife</a>&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x90FD;&#x662F;&#x4E00;&#x79CD;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x6846;&#x67B6;&#xFF1B;<br>Butter Knife&#x88AB;&#x79F0;&#x4E3A;&#x9EC4;&#x6CB9;&#x5200;&#xFF0C;&#x4E3B;&#x8981;&#x901A;&#x8FC7;&#x6CE8;&#x89E3;&#x7684;&#x6807;&#x8BB0;&#x5B8C;&#x6210;&#x5BF9;&#x8D44;&#x6E90;&#x7684;&#x83B7;&#x53D6;&#x4E0E;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;</p>
+<pre class="language-"><code>//&#x4F7F;&#x7528;@BindView&#x6CE8;&#x89E3;&#x6807;&#x8BB0;&#x7701;&#x53BB;&#x91CD;&#x590D;&#x7684;findViewById&#x521D;&#x59CB;&#x5316;View
+@BindView(R.id.text_view) TextView vTextView;
+
+//&#x4F7F;&#x7528;@OnClick&#x6CE8;&#x89E3;&#x6807;&#x8BB0;&#x7701;&#x53BB;&#x8BBE;&#x7F6E;&#x76D1;&#x542C;&#x5668;&#x7684;&#x9EBB;&#x70E6;
+@OnClick(R.id.submit) void submit() {
+    //do something...
+}
+</code></pre><p>Dagger2&#x540C;&#x6837;&#x662F;&#x4E00;&#x4EF6;&#x5229;&#x5668;&#xFF0C;&#x88AB;&#x79F0;&#x4E3A;&#x5315;&#x9996;&#xFF0C;&#x76EE;&#x7684;&#x5C31;&#x662F;&#x5212;&#x51FA;&#x4E00;&#x4E2A;&#x53E3;&#x5B50;&#x6CE8;&#x5165;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x7684;&#x4E1C;&#x897F;&#x3002;</p>
+<h4 id="&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;">&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;</h4>
+<p>&#x4F9D;&#x8D56;&#x6CE8;&#x5165;(&#x7B80;&#x79F0;DI: Dependency Injection)&#x662F;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7F16;&#x7A0B;&#x7684;&#x4E00;&#x79CD;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x3002;&#x7B80;&#x5355;&#x7684;&#x8BF4;&#xFF0C;&#x4F7F;&#x7528;DI&#x6280;&#x672F;&#x53EF;&#x4EE5;&#x8BA9;&#x5BF9;&#x8C61;&#x4ECE;&#x522B;&#x5904;&#x83B7;&#x5F97;&#x4F9D;&#x8D56;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x7531;&#x5B83;&#x81EA;&#x5DF1;&#x6765;&#x6784;&#x9020;&#xFF0C;&#x4F7F;&#x7528;DI&#x6709;&#x5F88;&#x591A;&#x597D;&#x5904;&#xFF0C;&#x5B83;&#x80FD;&#x964D;&#x4F4E;&#x4EE3;&#x7801;&#x4E4B;&#x95F4;&#x7684;&#x8026;&#x5408;&#x5EA6;&#xFF0C;&#x8BA9;&#x4EE3;&#x7801;&#x66F4;&#x6613;&#x4E8E;&#x6D4B;&#x8BD5;&#x3001;&#x66F4;&#x6613;&#x8BFB;&#x3002;</p>
+<p>&#x4E0D;&#x7528;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x7684;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x4EE5;&#x524D;&#x5305;&#x62EC;&#x73B0;&#x5728;&#x5927;&#x90E8;&#x5206;&#x60C5;&#x51B5;&#x4E0B;&#x662F;&#x5982;&#x4F55;&#x89E3;&#x51B3;&#x4F9D;&#x8D56;&#x7684;&#x5462;&#xFF1F;<br>&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x6BD4;&#x5982;&#x6BCF;&#x4E2A;GitHub&#x4ED3;&#x5E93;(Repo)&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x6216;&#x7EC4;&#x7EC7;(User)&#xFF0C;&#x8FD9;&#x65F6;&#x5019;Repo&#x662F;&#x5BF9;User&#x6709;&#x4F9D;&#x8D56;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x600E;&#x4E48;&#x5904;&#x7406;&#x5462;&#xFF1F;</p>
+<p>&#x7B2C;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x901A;&#x8FC7;&#x6784;&#x9020;&#x51FD;&#x6570;&#x6CE8;&#x5165;&#xFF0C;&#x89E3;&#x51B3;&#x4F9D;&#x8D56;&#x95EE;&#x9898;</p>
+<pre class="language-"><code>//User&#x6570;&#x636E;&#x7C7B;
+data class User constructor(val userName: String)
+
+//Repo&#x6570;&#x636E;&#x7C7B;
+data class Repo constructor(val repoName: String, val user: User)
+
+//&#x901A;&#x8FC7;&#x6784;&#x9020;&#x51FD;&#x6570;&#x6CE8;&#x5165;&#x5BF9;&#x8C61;
+val user = User(&quot;sunfusheng&quot;)
+val repo = Repo(&quot;GitHub&quot;, user)
+</code></pre><p>&#x7B2C;&#x4E8C;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x901A;&#x8FC7;&#x63A5;&#x53E3;&#x65B9;&#x5F0F;&#x6CE8;&#x5165;&#xFF0C;&#x89E3;&#x51B3;&#x4F9D;&#x8D56;&#x95EE;&#x9898;</p>
+<pre class="language-"><code>interface IOwnerProvider {
+    fun setOwner(owner: User)
+}
+
+data class Repo constructor(val repoName: String) : IOwnerProvider {
+    lateinit var user: User
+
+    override fun setOwner(owner: User) {
+        this.user = owner
+    }
+}
+
+//&#x901A;&#x8FC7;&#x63A5;&#x53E3;&#x65B9;&#x5F0F;&#x6CE8;&#x5165;&#x5BF9;&#x8C61;
+val repo = Repo(&quot;GitHub&quot;)
+repo.setOwner(user)
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Kotlin使用Dagger2详解">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第一节 Dagger2是什么？","level":"1.2.1","depth":2,"next":{"title":"第二节 @Inject和@Component","level":"1.2.2","depth":2,"ref":"","articles":[]},"previous":{"title":"Kotlin使用Dagger2详解","level":"1.2","depth":1,"path":"Dagger2/README.md","ref":"Dagger2/README.md","articles":[{"title":"第一节 Dagger2是什么？","level":"1.2.1","depth":2,"path":"Dagger2/Section-1.md","ref":"Dagger2/Section-1.md","articles":[]},{"title":"第二节 @Inject和@Component","level":"1.2.2","depth":2,"ref":"","articles":[]},{"title":"第三节 @Module和@Provides","level":"1.2.3","depth":2,"ref":"","articles":[]},{"title":"第四节 @Qualifier和@Named","level":"1.2.4","depth":2,"ref":"","articles":[]},{"title":"第五节 @Scope和@Singleton","level":"1.2.5","depth":2,"ref":"","articles":[]},{"title":"第六节 @Lazy和@Provider","level":"1.2.6","depth":2,"ref":"","articles":[]},{"title":"第七节 @Subcomponent","level":"1.2.7","depth":2,"ref":"","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","ace","splitter","toggle-chapters","prism","donate","-highlight","livereload"],"root":"docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"ace":{},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","author":"孙福生","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"《Android全面设计》","language":"zh-hans","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":true}},"gitbook":"*","description":"让我们开启全面系统学习Android开发之旅吧"},"file":{"path":"Dagger2/Section-1.md","mtime":"2019-01-29T16:35:51.125Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-29T13:20:29.552Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
